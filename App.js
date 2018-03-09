@@ -3,9 +3,6 @@ import { StyleSheet, Text, Image} from 'react-native';
 
 import * as firebase from 'firebase'; // 4.10.0
 
-
-
-
 // Initialize Firebase
 const firebaseConfig = {
    apiKey: "AIzaSyCY-kvWGhpEr5jlxcPGNGnmVWrrJO5Zgx0",
@@ -62,8 +59,11 @@ export default class App extends React.Component {
     }
 
     render() {
+      const image = 'https://cdn.pixabay.com/photo/2017/08/06/06/25/technology-2589463_1280.jpg'
         return (
+
             <Container style={styles.container}>
+            <Image style={styles.image} source={{uri: image}}/>
                 <Form>
                     <Item floatingLabel>
                         <Label>Email</Label>
@@ -103,13 +103,6 @@ export default class App extends React.Component {
                     </Button>
                 </Form>
             </Container>
-
-
-
-
-
-
-
         );
     }
 }
@@ -117,8 +110,14 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#AEAFAE',
-        flex: 1,
         justifyContent: 'center',
-        padding: 10
     },
+    image: {
+      width: '100%',
+      height: '100%',
+      //flex: 1,
+      position: 'absolute',
+      justifyContent: 'center',
+      resizeMode: 'cover',
+  },
 });
